@@ -1,5 +1,17 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  // create object to keep track of numbers we've already seen
+  const seenNumbers = {}
+  // iterate throuh each number in the array => can add a console.log for 'seenNumber' to see how it's working
+  for (const number of array) {
+  // for the current number, identify a complement that adds to the target
+    const complement = target - number 
+  // check if any key on our object is the complement 
+  // if so, return true 
+    if (complement in seenNumbers) return true 
+  // otherwise, add that number to the object 
+    seenNumbers[number] = true 
+  }
+  return false 
 }
 
 /* 
